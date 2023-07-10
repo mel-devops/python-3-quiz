@@ -5,7 +5,7 @@ def validate_file(file_path):
     with open(file_path, 'r') as file:
         next(file)
         for line in file:
-            first_name = line.split()[0]
+            first_name = line.split(',')[0]
             if any(char.isdigit() for char in first_name):
                 raise ValidationException(f"Invalid first name: {first_name}")
 
